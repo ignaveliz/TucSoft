@@ -40,17 +40,6 @@ Una vez ejecutado el comando, abre tu navegador e ingresa a:
 
 ---
 
-## Compilación para Producción
-
-Para generar el paquete optimizado para producción:
-
-```bash
-npm run build
-```
-
-Los archivos resultantes se ubicarán en la carpeta `dist/`.
-
----
 
 ## Tecnologías Utilizadas
 
