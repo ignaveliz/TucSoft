@@ -6,28 +6,23 @@ export default {
   theme: {
     extend: {
       colors: {
-        midnight: "#0B0F19",
-        carbon: "#121212",
+        ink: {
+          DEFAULT: "#181818",
+          deep: "#101010",
+          card: "#2A2A2A",
+        },
         brand: {
-          DEFAULT: "#ec5430",
-          hover: "#f26746",
-          muted: "rgba(236, 84, 48, 0.4)",
+          DEFAULT: "#EB542F",
+          hover: "#F2673F",
         },
-        heading: "#F3F4F6",
-        bodyText: "#9CA3AF",
-        glass: {
-          bg: "rgba(255, 255, 255, 0.05)",
-          border: "rgba(255, 255, 255, 0.1)",
-        },
+        muted: "#3A3A3A",
       },
       fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
         montserrat: ["Montserrat", "sans-serif"],
-        inter: ["Inter", "sans-serif"],
       },
       boxShadow: {
-        glass: "0 8px 32px 0 rgba(0, 0, 0, 0.45)",
-        glow: "0 0 25px rgba(236, 84, 48, 0.3)",
-        edge: "0 0 15px rgba(255, 255, 255, 0.08)",
+        card: "0 10px 30px rgba(0, 0, 0, 0.35)",
       },
     },
   },

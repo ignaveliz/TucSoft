@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Thermometer, ShieldAlert, Navigation, Activity, CheckCircle2, RefreshCw } from 'lucide-react';
-import { GlassCard } from '../ui/GlassCard';
 import { Switch } from '../ui/Switch';
 
 export const ColdTrackShowcase: React.FC = () => {
@@ -15,138 +14,138 @@ export const ColdTrackShowcase: React.FC = () => {
   };
 
   return (
-    <section id="coldtrack" className="py-24 bg-midnight relative">
-      <div className="max-w-7xl mx-auto px-6 sm:px-12">
+    <section id="coldtrack" className="bg-ink py-20 px-4 sm:px-10 lg:px-20">
+      <div className="max-w-[1200px] mx-auto">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/10 border border-brand/20 text-brand text-xs font-semibold uppercase tracking-wider mb-4">
+            <div className="inline-flex items-center gap-2 text-brand text-sm font-medium uppercase tracking-widest mb-3">
               <Activity size={14} />
               <span>PRODUCTO INSIGNIA TUCSOFT</span>
             </div>
-            <h2 className="text-3xl sm:text-5xl font-bold font-montserrat text-heading tracking-tight">
+            <h2 className="section-title">
               ColdTrack <span className="text-brand">IoT Platform</span>
             </h2>
           </div>
-          <p className="text-bodyText font-inter text-sm sm:text-base max-w-xl">
+          <p className="text-white text-base leading-6 max-w-xl">
             Solución integral de monitoreo inteligente de la cadena de frío para logística farmacéutica y alimentaria con alertas en tiempo real y trazabilidad criptográfica.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           <div className="lg:col-span-7 space-y-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <GlassCard className="p-6">
-                <div className="w-10 h-10 rounded-lg bg-brand/10 border border-brand/20 flex items-center justify-center text-brand mb-4">
-                  <Thermometer size={22} />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <div className="p-8 transition-colors hover:bg-ink-card">
+                <div className="text-brand mb-5">
+                  <Thermometer size={32} strokeWidth={1.75} />
                 </div>
-                <h4 className="text-base font-bold font-montserrat text-heading mb-2">
+                <h4 className="text-xl font-semibold text-white mb-3">
                   Precisión Térmica ±0.1°C
                 </h4>
-                <p className="text-xs text-bodyText leading-relaxed">
+                <p className="text-base leading-6 text-white">
                   Sensores IoT calibrados de alta resolución que registran fluctuaciones continuas cada 30 segundos.
                 </p>
-              </GlassCard>
+              </div>
 
-              <GlassCard className="p-6">
-                <div className="w-10 h-10 rounded-lg bg-brand/10 border border-brand/20 flex items-center justify-center text-brand mb-4">
-                  <ShieldAlert size={22} />
+              <div className="p-8 transition-colors hover:bg-ink-card">
+                <div className="text-brand mb-5">
+                  <ShieldAlert size={32} strokeWidth={1.75} />
                 </div>
-                <h4 className="text-base font-bold font-montserrat text-heading mb-2">
+                <h4 className="text-xl font-semibold text-white mb-3">
                   Alertas Predictivas SMS/Push
                 </h4>
-                <p className="text-xs text-bodyText leading-relaxed">
+                <p className="text-base leading-6 text-white">
                   Algoritmos preventivos que notifican desviaciones térmicas antes de romper la cadena de frío.
                 </p>
-              </GlassCard>
+              </div>
 
-              <GlassCard className="p-6">
-                <div className="w-10 h-10 rounded-lg bg-brand/10 border border-brand/20 flex items-center justify-center text-brand mb-4">
-                  <Navigation size={22} />
+              <div className="p-8 transition-colors hover:bg-ink-card">
+                <div className="text-brand mb-5">
+                  <Navigation size={32} strokeWidth={1.75} />
                 </div>
-                <h4 className="text-base font-bold font-montserrat text-heading mb-2">
+                <h4 className="text-xl font-semibold text-white mb-3">
                   Trazabilidad Geográfica GPS
                 </h4>
-                <p className="text-xs text-bodyText leading-relaxed">
+                <p className="text-base leading-6 text-white">
                   Mapeo en vivo de unidades de transporte de carga refrigerada con geocercas automáticas.
                 </p>
-              </GlassCard>
+              </div>
 
-              <GlassCard className="p-6">
-                <div className="w-10 h-10 rounded-lg bg-brand/10 border border-brand/20 flex items-center justify-center text-brand mb-4">
-                  <Activity size={22} />
+              <div className="p-8 transition-colors hover:bg-ink-card">
+                <div className="text-brand mb-5">
+                  <Activity size={32} strokeWidth={1.75} />
                 </div>
-                <h4 className="text-base font-bold font-montserrat text-heading mb-2">
+                <h4 className="text-xl font-semibold text-white mb-3">
                   Reportes de Auditoría FDA
                 </h4>
-                <p className="text-xs text-bodyText leading-relaxed">
+                <p className="text-base leading-6 text-white">
                   Exportación instantánea de certificados de cumplimiento normativo para auditorías de calidad.
                 </p>
-              </GlassCard>
+              </div>
             </div>
           </div>
 
           <div className="lg:col-span-5">
-            <GlassCard edgeGlow={true} className="border-brand/30 p-6 sm:p-8">
-              <div className="flex items-center justify-between pb-6 border-b border-white/10 mb-6">
+            <div className="bg-ink-deep rounded-lg p-6 sm:p-8">
+              <div className="flex items-center justify-between pb-6 border-b border-ink-card mb-6">
                 <div>
-                  <h3 className="text-lg font-bold font-montserrat text-heading">
+                  <h3 className="text-xl font-semibold text-white">
                     Telemetría ColdTrack en Vivo
                   </h3>
-                  <p className="text-xs text-bodyText">Unidad CT-9042 | Transporte Farmacéutico</p>
+                  <p className="text-sm text-white/60">Unidad CT-9042 | Transporte Farmacéutico</p>
                 </div>
                 <button
                   onClick={simulateTemperatureChange}
-                  className="p-2 rounded-lg bg-white/5 hover:bg-brand/10 text-bodyText hover:text-brand transition-colors"
+                  className="p-2 rounded text-white hover:text-brand transition-colors"
                   title="Simular actualización"
                 >
                   <RefreshCw size={16} />
                 </button>
               </div>
 
-              <div className="mb-8 p-6 rounded-xl bg-midnight/80 border border-white/10 flex items-center justify-between">
+              <div className="mb-6 p-6 rounded bg-ink flex items-center justify-between">
                 <div>
-                  <span className="text-xs text-bodyText uppercase font-semibold">Temperatura Actual</span>
-                  <div className="text-4xl font-extrabold font-montserrat text-heading mt-1 flex items-baseline gap-1">
-                    <span className={temperature > 5.5 ? 'text-amber-400' : 'text-emerald-400'}>
+                  <span className="text-xs text-white/60 uppercase tracking-wider">Temperatura Actual</span>
+                  <div className="text-5xl font-bold text-white mt-1 flex items-baseline gap-1">
+                    <span className={temperature > 5.5 ? 'text-brand' : 'text-white'}>
                       {temperature}°C
                     </span>
-                    <span className="text-xs text-bodyText font-normal">Rangos (2.0°C - 8.0°C)</span>
+                    <span className="text-xs text-white/60 font-normal">Rangos (2.0°C - 8.0°C)</span>
                   </div>
                 </div>
                 <div className="flex flex-col items-end">
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-semibold">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-ink-card text-white text-xs">
                     <CheckCircle2 size={12} />
                     Optimo
                   </span>
                 </div>
               </div>
 
-              <div className="space-y-5">
-                <div className="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/5">
-                  <span className="text-sm font-medium text-heading">Monitoreo Sensor IoT</span>
+              <div className="space-y-2">
+                <div className="flex items-center justify-between p-3 rounded bg-ink">
+                  <span className="text-sm text-white">Monitoreo Sensor IoT</span>
                   <Switch
                     checked={isMonitoringActive}
                     onChange={setIsMonitoringActive}
                   />
                 </div>
 
-                <div className="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/5">
-                  <span className="text-sm font-medium text-heading">Sistema de Alertas Inmediatas</span>
+                <div className="flex items-center justify-between p-3 rounded bg-ink">
+                  <span className="text-sm text-white">Sistema de Alertas Inmediatas</span>
                   <Switch
                     checked={isAlertSystemOn}
                     onChange={setIsAlertSystemOn}
                   />
                 </div>
 
-                <div className="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/5">
-                  <span className="text-sm font-medium text-heading">Rastreo Satelital GPS</span>
+                <div className="flex items-center justify-between p-3 rounded bg-ink">
+                  <span className="text-sm text-white">Rastreo Satelital GPS</span>
                   <Switch
                     checked={isGpsTrackingOn}
                     onChange={setIsGpsTrackingOn}
                   />
                 </div>
               </div>
-            </GlassCard>
+            </div>
           </div>
         </div>
       </div>
