@@ -16,18 +16,18 @@ export const Button: React.FC<ButtonProps> = ({
   disabled,
   ...props
 }) => {
-  const baseStyles = 'inline-flex items-center justify-center font-montserrat font-semibold rounded-lg transition-all duration-200 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed';
+  const baseStyles = 'inline-flex items-center justify-center font-poppins font-normal rounded-[4px] transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand disabled:opacity-50 disabled:cursor-not-allowed';
   
   const variantStyles = {
-    primary: 'bg-brand text-white hover:bg-brand-hover shadow-lg shadow-brand/20 active:scale-[0.98]',
-    outline: 'border border-white/20 bg-white/5 text-heading hover:border-brand hover:text-brand hover:bg-brand/10',
-    ghost: 'text-heading hover:text-brand hover:bg-white/5',
+    primary: 'bg-brand text-white font-medium hover:bg-brand-hover',
+    outline: 'border-2 border-white bg-transparent text-white hover:bg-white hover:text-ink',
+    ghost: 'text-white hover:text-brand',
   };
 
   const sizeStyles = {
-    sm: 'px-4 py-2 text-xs gap-1.5',
-    md: 'px-6 py-2.5 text-sm gap-2',
-    lg: 'px-8 py-3.5 text-base gap-2.5',
+    sm: 'px-4 py-2 text-sm gap-2',
+    md: 'px-5 py-3 text-base gap-2.5',
+    lg: 'px-6 py-[14px] text-base gap-3',
   };
 
   return (

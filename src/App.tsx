@@ -13,7 +13,7 @@ export const App: React.FC = () => {
   const [estimateModalOpen, setEstimateModalOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-midnight text-bodyText font-inter selection:bg-brand selection:text-white">
+    <div className="min-h-screen bg-ink text-white font-poppins overflow-x-hidden">
       <Navbar onOpenEstimate={() => setEstimateModalOpen(true)} />
       
       <main>

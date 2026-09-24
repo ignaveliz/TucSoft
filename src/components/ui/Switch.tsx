@@ -20,7 +20,7 @@ export const Switch: React.FC<SwitchProps> = ({
         onClick={() => !disabled && onChange(!checked)}
         className={clsx(
           'w-12 h-6 rounded-full transition-colors duration-200 relative p-1',
-          checked ? 'bg-brand shadow-glow' : 'bg-white/10 border border-white/10'
+          checked ? 'bg-brand' : 'bg-ink-card'
         )}
       >
         <div
@@ -30,7 +30,7 @@ export const Switch: React.FC<SwitchProps> = ({
           )}
         />
       </div>
-      {label && <span className="text-sm font-medium text-heading">{label}</span>}
+      {label && <span className="text-sm font-medium text-white">{label}</span>}
     </label>
   );
 };

@@ -1,6 +1,37 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Share2, Globe, Laptop } from 'lucide-react';
-import { Button } from '../ui/Button';
+import logo from '../../assets/logo-tucsoft.png';
+
+const FacebookIcon = () => (
+  <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor" aria-hidden>
+    <path d="M12 2C6.48 2 2 6.48 2 12c0 4.99 3.66 9.13 8.44 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99C18.34 21.13 22 16.99 22 12c0-5.52-4.48-10-10-10z" />
+  </svg>
+);
+
+const InstagramIcon = () => (
+  <svg viewBox="0 0 24 24" className="w-6 h-6" aria-hidden>
+    <circle cx="12" cy="12" r="10" fill="currentColor" />
+    <rect x="7" y="7" width="10" height="10" rx="3" fill="none" stroke="#101010" strokeWidth="1.6" />
+    <circle cx="12" cy="12" r="2.4" fill="none" stroke="#101010" strokeWidth="1.6" />
+    <circle cx="15" cy="9" r="0.8" fill="#101010" />
+  </svg>
+);
+
+const LinkedinIcon = () => (
+  <svg viewBox="0 0 24 24" className="w-6 h-6" aria-hidden>
+    <circle cx="12" cy="12" r="10" fill="currentColor" />
+    <path d="M8.2 10.2h1.7v5.6H8.2zM9.05 7.6a.95.95 0 1 1 0 1.9.95.95 0 0 1 0-1.9zM11.1 10.2h1.6v.77c.24-.45.82-.9 1.68-.9 1.8 0 2.12 1.18 2.12 2.7v3.03h-1.68v-2.7c0-.64-.01-1.47-.9-1.47-.9 0-1.04.7-1.04 1.42v2.75h-1.68z" fill="#101010" />
+  </svg>
+);
+
+const links = [
+  { label: 'Inicio', href: '#' },
+  { label: 'Servicios', href: '#services' },
+  { label: 'Nosotros', href: '#mission' },
+  { label: 'ColdTrack', href: '#coldtrack' },
+  { label: 'Clientes', href: '#clients' },
+];
+
+const services = ['Desarrollo a Medida', 'IoT y Telemetría', 'Datos e IA', 'Automatización', 'Cloud y DevOps'];
 
 export const Footer: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -16,99 +47,85 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-carbon border-t border-white/10 pt-20 pb-12 text-bodyText">
-      <div className="max-w-7xl mx-auto px-6 sm:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-white/10">
-          <div className="lg:col-span-5 space-y-6">
-            <a href="#" className="text-3xl font-extrabold font-montserrat text-brand tracking-tight">
-              tucsoft
+    <footer className="font-montserrat text-white">
+      <div className="bg-ink-deep px-4 sm:px-10 lg:px-[117px] py-12">
+        <div className="max-w-[1126px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[360px_1px_auto_auto_1px_1fr] gap-10 lg:gap-x-14">
+          <div>
+            <a href="#" className="inline-block">
+              <img src={logo} alt="TucSoft" className="h-10 w-auto" />
             </a>
-            <p className="text-sm text-bodyText leading-relaxed max-w-md">
-              Creemos en crecer juntos impulsando empresas mediante tecnología y satisfaciendo sus necesidades de software complejo a través de planificación estratégica y desarrollo de alta calidad.
+            <p className="mt-6 text-[15px] leading-[22px]">
+              Creemos en crecer juntos, impulsando empresas mediante la tecnología y resolviendo sus
+              necesidades de software con planificación estratégica y desarrollo.
             </p>
 
-            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row items-stretch gap-2 max-w-md">
+            <form onSubmit={handleSubscribe} className="mt-4 flex h-12 border border-brand max-w-[360px]">
               <input
                 type="email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Ingresa tu correo electrónico"
-                className="bg-midnight border border-white/10 rounded-lg px-4 py-2.5 text-sm text-heading placeholder:text-bodyText/50 focus:outline-none focus:border-brand flex-1"
+                placeholder="Ingresá tu email"
+                className="flex-1 min-w-0 bg-transparent px-4 text-sm text-white placeholder:text-white/80 focus:outline-none"
               />
-              <Button type="submit" variant="primary" size="md" className="whitespace-nowrap">
-                {subscribed ? '¡Suscrito!' : 'Unirme al Newsletter'}
-              </Button>
+              <button
+                type="submit"
+                className="bg-brand hover:bg-brand-hover px-3 text-sm font-semibold whitespace-nowrap transition-colors"
+              >
+                {subscribed ? '¡Suscripto!' : 'Unirme al Newsletter'}
+              </button>
             </form>
 
-            <div className="flex items-center gap-4 pt-2">
-              <a href="#" className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-heading hover:text-brand hover:border-brand transition-colors">
-                <Globe size={18} />
-              </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-heading hover:text-brand hover:border-brand transition-colors">
-                <Share2 size={18} />
-              </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-heading hover:text-brand hover:border-brand transition-colors">
-                <Laptop size={18} />
-              </a>
+            <div className="mt-4 flex items-center gap-4 text-brand">
+              <a href="#" aria-label="Facebook" className="hover:text-brand-hover"><FacebookIcon /></a>
+              <a href="#" aria-label="Instagram" className="hover:text-brand-hover"><InstagramIcon /></a>
+              <a href="#" aria-label="LinkedIn" className="hover:text-brand-hover"><LinkedinIcon /></a>
             </div>
           </div>
 
-          <div className="lg:col-span-2 space-y-4 lg:border-l lg:border-white/10 lg:pl-8">
-            <h4 className="text-base font-bold font-montserrat text-brand tracking-wide">
-              Enlaces
-            </h4>
-            <ul className="space-y-2.5 text-sm font-medium">
-              <li><a href="#" className="hover:text-heading transition-colors">Inicio</a></li>
-              <li><a href="#services" className="hover:text-heading transition-colors">Tecnologías</a></li>
-              <li><a href="#work" className="hover:text-heading transition-colors">Casos de Estudio</a></li>
-              <li><a href="#coldtrack" className="hover:text-heading transition-colors">ColdTrack IoT</a></li>
-              <li><a href="#work" className="hover:text-heading transition-colors">Portafolio</a></li>
+          <span className="hidden lg:block w-px bg-brand self-stretch mt-9" />
+
+          <div>
+            <h4 className="text-xl font-medium text-brand">Enlaces</h4>
+            <ul className="mt-8 space-y-6 text-sm font-medium">
+              {links.map((link) => (
+                <li key={link.label}>
+                  <a href={link.href} className="hover:text-brand transition-colors">{link.label}</a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          <div className="lg:col-span-2 space-y-4 lg:border-l lg:border-white/10 lg:pl-8">
-            <h4 className="text-base font-bold font-montserrat text-brand tracking-wide">
-              Servicios
-            </h4>
-            <ul className="space-y-2.5 text-sm font-medium">
-              <li><a href="#services" className="hover:text-heading transition-colors">Diseño UI/UX</a></li>
-              <li><a href="#services" className="hover:text-heading transition-colors">Desarrollo Web</a></li>
-              <li><a href="#services" className="hover:text-heading transition-colors">Aplicaciones Móviles</a></li>
-              <li><a href="#services" className="hover:text-heading transition-colors">Marketing Digital</a></li>
-              <li><a href="#services" className="hover:text-heading transition-colors">Servicios SEO</a></li>
+          <div>
+            <h4 className="text-xl font-medium text-brand">Servicios</h4>
+            <ul className="mt-8 space-y-6 text-sm font-medium">
+              {services.map((service) => (
+                <li key={service}>
+                  <a href="#services" className="hover:text-brand transition-colors">{service}</a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          <div className="lg:col-span-3 space-y-4 lg:border-l lg:border-white/10 lg:pl-8">
-            <h4 className="text-base font-bold font-montserrat text-brand tracking-wide">
-              Contacto
-            </h4>
-            <div className="space-y-3 text-sm">
-              <div className="flex items-center gap-2.5">
-                <Mail size={16} className="text-brand shrink-0" />
-                <span className="text-heading font-medium">info@tucsoft.com</span>
-              </div>
-              <div className="flex items-start gap-2.5">
-                <MapPin size={16} className="text-brand shrink-0 mt-1" />
-                <span>San Miguel de Tucumán, Argentina</span>
-              </div>
-              <div className="flex items-center gap-2.5">
-                <Phone size={16} className="text-brand shrink-0" />
-                <span>+54 381 400-7800</span>
-              </div>
+          <span className="hidden lg:block w-px bg-brand self-stretch mt-9" />
+
+          <div className="lg:text-center">
+            <h4 className="text-xl font-medium text-brand">Contacto</h4>
+            <div className="mt-8 space-y-3 text-[15px] leading-[23px]">
+              <p className="font-medium">info@tucsoft.com</p>
+              <p className="font-normal">
+                San Miguel de Tucumán,
+                <br />
+                Argentina
+              </p>
+              <p className="font-normal">+54 381 400-7800</p>
             </div>
           </div>
         </div>
+      </div>
 
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-bodyText/60 gap-4">
-          <p>© {new Date().getFullYear()} TucSoft. Todos los derechos reservados.</p>
-          <div className="flex items-center gap-6">
-            <a href="#" className="hover:underline">Política de Privacidad</a>
-            <a href="#" className="hover:underline">Términos de Servicio</a>
-            <a href="#" className="hover:underline">Seguridad & Cumplimiento</a>
-          </div>
-        </div>
+      <div className="bg-ink py-4 text-center text-[13px]">
+        ©{new Date().getFullYear()} - TucSoft | Todos los derechos reservados
       </div>
     </footer>
   );
