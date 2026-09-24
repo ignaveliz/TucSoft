@@ -25,13 +25,13 @@ const LinkedinIcon = () => (
 
 const links = [
   { label: 'Inicio', href: '#' },
-  { label: 'Tecnologías', href: '#services' },
-  { label: 'Casos de Estudio', href: '#work' },
+  { label: 'Servicios', href: '#services' },
+  { label: 'Nosotros', href: '#mission' },
+  { label: 'ColdTrack', href: '#coldtrack' },
   { label: 'Clientes', href: '#clients' },
-  { label: 'ColdTrack IoT', href: '#coldtrack' },
 ];
 
-const services = ['UI/UX', 'Desarrollo Web', 'Aplicaciones Móviles', 'Marketing Digital', 'SEO'];
+const services = ['Desarrollo a Medida', 'IoT y Telemetría', 'Datos e IA', 'Automatización', 'Cloud y DevOps'];
 
 export const Footer: React.FC = () => {
   const [email, setEmail] = useState('');

@@ -1,45 +1,45 @@
 import React, { useState } from 'react';
-import { ArrowUpRight, Smartphone, Megaphone, Search, BarChart3, Settings, Hash } from 'lucide-react';
+import { ArrowUpRight, CodeXml, Cpu, BrainCircuit, Workflow, Cloud, Headset } from 'lucide-react';
 
 export const ServicesSection: React.FC = () => {
-  const [activeId, setActiveId] = useState('ui-ux');
+  const [activeId, setActiveId] = useState('software');
 
   const services = [
     {
-      id: 'ui-ux',
-      icon: Hash,
-      title: 'Diseño UI/UX',
-      description: 'Diseñamos experiencias digitales intuitivas y atractivas que potencian el engagement de tus usuarios.',
+      id: 'software',
+      icon: CodeXml,
+      title: 'Desarrollo a Medida',
+      description: 'Construimos aplicaciones web y móviles robustas y escalables, integrando frontend, backend y bases de datos.',
     },
     {
-      id: 'mobile',
-      icon: Smartphone,
-      title: 'iOS & Android',
-      description: 'Construimos aplicaciones móviles nativas y multiplataforma diseñadas para satisfacer complejas demandas operativas.',
+      id: 'iot',
+      icon: Cpu,
+      title: 'IoT y Telemetría',
+      description: 'Conectamos equipos físicos con sensores inteligentes para registrar su rendimiento en tiempo real.',
     },
     {
-      id: 'marketing',
-      icon: Megaphone,
-      title: 'Marketing Digital',
-      description: 'Impulsamos tu marca mediante estrategias de crecimiento, soluciones CMS corporativas e innovación continua.',
+      id: 'data-ia',
+      icon: BrainCircuit,
+      title: 'Datos e IA',
+      description: 'Transformamos datos crudos en diagnósticos y alertas predictivas mediante modelos de inteligencia artificial.',
     },
     {
-      id: 'seo',
-      icon: Search,
-      title: 'Posicionamiento SEO',
-      description: 'Optimizamos la presencia digital de tu empresa con estrategias avanzadas para liderar en los motores de búsqueda.',
+      id: 'automation',
+      icon: Workflow,
+      title: 'Automatización de Procesos',
+      description: 'Digitalizamos flujos de trabajo manuales y burocráticos para eliminar tiempos muertos y errores humanos.',
     },
     {
-      id: 'enterprise',
-      icon: BarChart3,
-      title: 'Soluciones Empresariales',
-      description: 'Transformamos procesos estratégicos en sistemas de software escalables que potencian el rendimiento de tu negocio.',
+      id: 'cloud',
+      icon: Cloud,
+      title: 'Infraestructura Cloud y DevOps',
+      description: 'Desplegamos y operamos plataformas seguras y de alta disponibilidad con integración y entrega continua.',
     },
     {
-      id: 'maintenance',
-      icon: Settings,
-      title: 'Mantenimiento & Soporte',
-      description: 'Ofrecemos soporte técnico proactivo y mantenimiento evolutivo continuo para asegurar el crecimiento sostenido.',
+      id: 'support',
+      icon: Headset,
+      title: 'Mantenimiento y Soporte',
+      description: 'Acompañamos a nuestros clientes después de la entrega con soporte técnico y mantenimiento preventivo y correctivo.',
     },
   ];
 
@@ -51,7 +51,7 @@ export const ServicesSection: React.FC = () => {
             Nuestros <span className="text-brand">Servicios</span>
           </h2>
           <p className="mt-4 text-base text-white">
-            Ofrecemos Desarrollo Full Stack e Innovación Digital Tecnológica
+            Software, IoT e inteligencia artificial para empresas de la región
           </p>
         </div>
 

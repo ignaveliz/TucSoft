@@ -88,9 +88,11 @@ export const EstimateModal: React.FC<EstimateModalProps> = ({ isOpen, onClose })
                   className="w-full bg-ink-deep border border-ink-card rounded px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand"
                 >
                   <option value="Solución ColdTrack IoT">Solución ColdTrack IoT</option>
-                  <option value="Diseño UI/UX">Diseño UI/UX</option>
-                  <option value="Desarrollo Mobile iOS & Android">Desarrollo Mobile iOS & Android</option>
-                  <option value="Sistemas Empresariales Full Stack">Sistemas Empresariales Full Stack</option>
+                  <option value="Desarrollo a Medida">Desarrollo a Medida (web y móvil)</option>
+                  <option value="IoT y Telemetría">IoT y Telemetría</option>
+                  <option value="Datos e IA">Datos e IA</option>
+                  <option value="Automatización de Procesos">Automatización de Procesos</option>
+                  <option value="Infraestructura Cloud y DevOps">Infraestructura Cloud y DevOps</option>
                 </select>
               </div>
 

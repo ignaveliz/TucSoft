@@ -7,10 +7,10 @@ interface NavbarProps {
 }
 
 const menuLinks = [
-  { label: 'Nosotros', href: '#mission' },
   { label: 'Servicios', href: '#services' },
-  { label: 'Proyectos', href: '#work' },
+  { label: 'Nosotros', href: '#mission' },
   { label: 'ColdTrack', href: '#coldtrack' },
+  { label: 'Cómo funciona', href: '#como-funciona' },
   { label: 'Clientes', href: '#clients' },
 ];
 
@@ -96,7 +96,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEstimate }) => {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="w-[270px] text-center pb-2 border-b border-white text-4xl sm:text-5xl font-poppins font-medium uppercase text-white hover:text-brand hover:border-brand transition-colors"
+                className="min-w-[270px] px-4 text-center pb-2 border-b border-white text-4xl sm:text-5xl font-poppins font-medium uppercase text-white hover:text-brand hover:border-brand transition-colors"
               >
                 {link.label}
               </a>

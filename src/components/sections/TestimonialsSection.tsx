@@ -1,70 +1,52 @@
-import React, { useState } from 'react';
-import { ArrowRight } from 'lucide-react';
+import React from 'react';
+import { ArrowRight, Factory, GlassWater, Store, Wrench } from 'lucide-react';
 import { Button } from '../ui/Button';
-import worldMap from '../../assets/world-map.svg';
-import avatar1 from '../../assets/avatar-1.png';
-import avatar2 from '../../assets/avatar-2.png';
-import { mapDots } from './mapDots';
+import { NOA_VIEWBOX, noaCities, noaProvinces } from './noaMap';
 
 interface TestimonialsSectionProps {
   onConnect?: () => void;
 }
 
+const sectors = [
+  {
+    icon: GlassWater,
+    title: 'Embotelladoras de bebidas',
+    description:
+      'Plantas que proveen exhibidoras a su red de comercios y necesitan mantenerlas funcionando sin cortar la venta.',
+  },
+  {
+    icon: Factory,
+    title: 'Industria frigorífica',
+    description:
+      'Empresas para las que la refrigeración es parte central del proceso productivo y de la cadena de suministro.',
+  },
+  {
+    icon: Store,
+    title: 'Comercializadoras de equipos',
+    description:
+      'Compañías que venden heladeras y freezers y buscan ofrecer un servicio postventa ágil y trazable.',
+  },
+  {
+    icon: Wrench,
+    title: 'Talleres de refrigeración',
+    description:
+      'Servicios técnicos de la región que se suman a nuestra plataforma de partnering para recibir órdenes de trabajo.',
+  },
+];
+
+// Posiciones de las etiquetas de provincia (en % del mapa)
+const provinceLabels: Record<string, { x: number; y: number }> = {
+  Jujuy: { x: 40, y: 12 },
+  Salta: { x: 74, y: 20 },
+  Tucumán: { x: 60, y: 44 },
+  Catamarca: { x: 30, y: 52 },
+  'Santiago del Estero': { x: 76, y: 62 },
+  'La Rioja': { x: 22, y: 78 },
+};
+
 export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ onConnect }) => {
-  const [filter, setFilter] = useState<'satisfied' | 'reviews'>('satisfied');
-
-  const satisfiedCustomers = [
-    {
-      name: 'Paul McGuire',
-      role: 'Co-fundador & CEO, Tru.id',
-      text: 'Estoy sumamente orgulloso del trabajo del equipo de TucSoft. Son profesionales altamente capaces y los recomiendo con total confianza para proyectos de alta complejidad.',
-      location: 'Londres, Reino Unido',
-      avatar: avatar1,
-    },
-    {
-      name: 'Elena Rostova',
-      role: 'Directora de Operaciones, PharmaLogix',
-      text: 'La integración de ColdTrack redujo a cero nuestras mermas por temperatura durante la distribución biológica. Un socio estratégico imprescindible.',
-      location: 'Madrid, España',
-      avatar: avatar2,
-    },
-    {
-      name: 'Marcus Vance',
-      role: 'CTO, BioHealth Global',
-      text: 'TucSoft transformó nuestro ecosistema tecnológico de trazabilidad. Su arquitectura de software es robusta, segura y verdaderamente escalable.',
-      location: 'Boston, EE. UU.',
-      avatar: avatar1,
-    },
-  ];
-
-  const customerReviews = [
-    {
-      name: 'Tilly Firth',
-      role: 'Co-fundadora & CEO, Impala',
-      text: 'El compromiso técnico y la innovación de TucSoft con la plataforma ColdTrack superó nuestras expectativas. Logramos una trazabilidad perfecta de la cadena de frío.',
-      location: 'Berlín, Alemania',
-      avatar: avatar2,
-    },
-    {
-      name: 'Carlos Mendoza',
-      role: 'Gerente de Logística, FrigoSur',
-      text: 'Las alertas en tiempo real de ColdTrack nos permitieron prevenir incidentes críticos en ruta. La atención y el soporte técnico del equipo son excepcionales.',
-      location: 'Buenos Aires, Argentina',
-      avatar: avatar1,
-    },
-    {
-      name: 'Sophie Laurent',
-      role: 'Head of Supply Chain, AgroVanguard',
-      text: 'Excelente diseño UI/UX y respuesta inmediata de la telemetría IoT. TucSoft superó ampliamente los rigurosos estándares que nuestra industria exige.',
-      location: 'París, Francia',
-      avatar: avatar2,
-    },
-  ];
-
-  const currentTestimonials = filter === 'satisfied' ? satisfiedCustomers : customerReviews;
-
   return (
-    <section id="clients" className="bg-ink px-4 sm:px-10 lg:px-20 pt-10 pb-24">
+    <section id="clients" className="bg-ink px-4 sm:px-10 lg:px-20 pt-20 pb-24">
       <div className="max-w-[1200px] mx-auto">
         <div className="bg-ink-deep rounded-lg px-6 sm:px-8 py-10 flex flex-col md:flex-row md:items-center justify-between gap-8 mb-20 lg:mb-24">
           <div className="max-w-[800px]">
@@ -88,62 +70,77 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ onConn
             Nuestros <span className="text-brand">Clientes</span>
           </h2>
           <p className="mt-6 text-base text-white">
-            Conocé la experiencia de las empresas que confían en TucSoft
+            Empresas del Noroeste Argentino que dependen de sus equipos de frío
           </p>
 
           <div className="mt-5 inline-flex flex-wrap justify-center gap-4 text-sm">
-            <button
-              onClick={() => setFilter('satisfied')}
-              className={`flex items-center gap-2 pl-3 pr-4 py-2 rounded-full bg-ink-deep transition-opacity ${
-                filter === 'satisfied' ? 'opacity-100' : 'opacity-60 hover:opacity-100'
-              }`}
-            >
-              <span className="w-4 h-4 rounded-full bg-white" />
-              <span className="text-white">Clientes satisfechos</span>
-            </button>
-            <button
-              onClick={() => setFilter('reviews')}
-              className={`flex items-center gap-2 pl-3 pr-4 py-2 rounded-full bg-ink-deep transition-opacity ${
-                filter === 'reviews' ? 'opacity-100' : 'opacity-60 hover:opacity-100'
-              }`}
-            >
+            <span className="flex items-center gap-2 pl-3 pr-4 py-2 rounded-full bg-ink-deep">
               <span className="w-4 h-4 rounded-full bg-brand" />
-              <span className="text-white">Reseñas de clientes</span>
-            </button>
+              <span className="text-white">Sede TucSoft</span>
+            </span>
+            <span className="flex items-center gap-2 pl-3 pr-4 py-2 rounded-full bg-ink-deep">
+              <span className="w-4 h-4 rounded-full bg-white" />
+              <span className="text-white">Cobertura en el NOA</span>
+            </span>
           </div>
         </div>
 
-        <div className="relative mt-16 lg:mt-20">
-          <div className="relative hidden md:block">
-            <img src={worldMap} alt="" aria-hidden className="w-full h-auto select-none pointer-events-none" />
-            {mapDots.map((dot, idx) => (
-              <span
-                key={idx}
-                className={`absolute rounded-full -translate-x-1/2 -translate-y-1/2 ${
-                  dot.accent ? 'w-4 h-4 bg-brand' : 'w-1.5 h-1.5 bg-white'
-                }`}
-                style={{ left: `${dot.x}%`, top: `${dot.y}%` }}
-              />
-            ))}
+        <div className="mt-14 lg:mt-16 grid grid-cols-1 lg:grid-cols-[minmax(0,440px)_1fr] gap-12 lg:gap-16 items-center">
+          <div className="relative w-full max-w-[440px] mx-auto">
+            <svg viewBox={NOA_VIEWBOX} className="w-full h-auto" role="img" aria-label="Mapa del Noroeste Argentino">
+              {noaProvinces.map((province) => {
+                const isHome = province.name === 'Tucumán';
+                return (
+                  <path
+                    key={province.name}
+                    d={province.d}
+                    className={isHome ? 'fill-brand/25 stroke-brand' : 'fill-ink-deep stroke-ink-card'}
+                    strokeWidth={2}
+                    strokeLinejoin="round"
+                  />
+                );
+              })}
+            </svg>
+
+            {noaProvinces.map((province) => {
+              const label = provinceLabels[province.name];
+              const isHome = province.name === 'Tucumán';
+              return (
+                <span
+                  key={province.name}
+                  className={`absolute -translate-x-1/2 -translate-y-1/2 text-[11px] sm:text-xs uppercase tracking-wider whitespace-nowrap pointer-events-none ${
+                    isHome ? 'text-brand font-medium' : 'text-white/40'
+                  }`}
+                  style={{ left: `${label.x}%`, top: `${label.y}%` }}
+                >
+                  {province.name}
+                </span>
+              );
+            })}
+
+            {noaCities.map((city) => {
+              const isHome = city.name === 'San Miguel de Tucumán';
+              return (
+                <span
+                  key={city.name}
+                  title={city.name}
+                  className={`absolute rounded-full -translate-x-1/2 -translate-y-1/2 ${
+                    isHome ? 'w-4 h-4 bg-brand' : city.capital ? 'w-2.5 h-2.5 bg-white' : 'w-1.5 h-1.5 bg-white/80'
+                  }`}
+                  style={{ left: `${city.x}%`, top: `${city.y}%` }}
+                >
+                  {isHome && <span className="absolute inset-0 rounded-full bg-brand animate-ping" />}
+                </span>
+              );
+            })}
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:absolute md:inset-0 md:block">
-            {currentTestimonials.slice(0, 2).map((item, idx) => (
-              <article
-                key={item.name}
-                className={`bg-ink-deep rounded-lg shadow-card p-4 md:absolute md:w-[245px] text-left ${
-                  idx === 0 ? 'md:left-[19%] md:top-[12%]' : 'md:left-[54%] md:top-[5%]'
-                }`}
-              >
-                <span className="block text-brand text-3xl leading-none font-medium tracking-tighter h-6">66</span>
-                <p className="mt-2 text-[15px] leading-[21px] text-white">{item.text}</p>
-                <div className="mt-6 flex items-center gap-2">
-                  <img src={item.avatar} alt={item.name} className="w-12 h-12 rounded-full object-cover grayscale" />
-                  <div>
-                    <h4 className="text-[15px] font-normal text-brand">{item.name}</h4>
-                    <p className="text-xs font-light text-white/80">{item.role}</p>
-                  </div>
-                </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {sectors.map(({ icon: Icon, title, description }) => (
+              <article key={title} className="bg-ink-deep rounded-lg shadow-card p-6 transition-colors hover:bg-ink-card">
+                <Icon size={28} strokeWidth={1.75} className="text-brand mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-3">{title}</h3>
+                <p className="text-[15px] leading-[22px] text-white">{description}</p>
               </article>
             ))}
           </div>

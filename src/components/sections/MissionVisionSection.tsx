@@ -10,7 +10,7 @@ export const MissionVisionSection: React.FC = () => {
             Misión & <span className="text-brand">Visión</span>
           </h2>
           <p className="text-base text-white">
-            Impulsando el desarrollo de software sostenible y soluciones IoT avanzadas para la industria global.
+            Transformamos equipos de frío convencionales en activos inteligentes.
           </p>
         </div>
 
@@ -30,13 +30,13 @@ export const MissionVisionSection: React.FC = () => {
               </h3>
 
               <p className="text-white text-base leading-6 mb-6">
-                Desarrollar soluciones de software empresariales de alto rendimiento, sostenibles e innovadoras que transformen los procesos críticos de nuestros clientes, garantizando máxima fiabilidad y eficiencia operativa.
+                Proveer soluciones de vanguardia en monitoreo y diagnóstico preventivo para la industria de la refrigeración, transformando equipos de frío convencionales en activos inteligentes para garantizar la integridad de la cadena de suministro de nuestros clientes.
               </p>
             </div>
 
             <div className="pt-5 border-t border-muted flex items-center justify-between text-sm text-white/70">
-              <span>TucSoft Enterprise Engineering</span>
-              <span className="text-brand">Excelencia Continua</span>
+              <span>Diagnóstico preventivo</span>
+              <span className="text-brand">Cadena de suministro</span>
             </div>
           </article>
 
@@ -55,13 +55,13 @@ export const MissionVisionSection: React.FC = () => {
               </h3>
 
               <p className="text-white text-base leading-6 mb-6">
-                Consolidarnos como el socio tecnológico líder a nivel internacional en desarrollo full-stack y monitoreo inteligente IoT con productos insignia como ColdTrack, estableciendo nuevos estándares en la cadena de frío digital.
+                Ser el estándar tecnológico global en gestión de equipos de frío para 2030, liderando el mercado de IoT (Internet de las Cosas) aplicado a la refrigeración comercial e industrial en el NOA y el resto del mundo.
               </p>
             </div>
 
             <div className="pt-5 border-t border-muted flex items-center justify-between text-sm text-white/70">
-              <span>Proyección Global 2030</span>
-              <span className="text-brand">Innovación Sin Fronteras</span>
+              <span>Horizonte 2030</span>
+              <span className="text-brand">Del NOA al mundo</span>
             </div>
           </article>
         </div>
