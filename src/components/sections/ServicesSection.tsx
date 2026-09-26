@@ -1,45 +1,27 @@
 import React, { useState } from 'react';
-import { ArrowUpRight, CodeXml, Cpu, BrainCircuit, Workflow, Cloud, Headset } from 'lucide-react';
+import { ArrowUpRight, Cpu, BrainCircuit, Wrench } from 'lucide-react';
 
 export const ServicesSection: React.FC = () => {
-  const [activeId, setActiveId] = useState('software');
+  const [activeId, setActiveId] = useState('telemetria');
 
   const services = [
     {
-      id: 'software',
-      icon: CodeXml,
-      title: 'Desarrollo a Medida',
-      description: 'Construimos aplicaciones web y móviles robustas y escalables, integrando frontend, backend y bases de datos.',
-    },
-    {
-      id: 'iot',
+      id: 'telemetria',
       icon: Cpu,
-      title: 'IoT y Telemetría',
-      description: 'Conectamos equipos físicos con sensores inteligentes para registrar su rendimiento en tiempo real.',
+      title: 'Telemetría IoT en Tiempo Real',
+      description: 'Sensores universales que monitorean temperatura, ciclos de compresor y consumo eléctrico de heladeras, exhibidoras y freezers las 24 hs.',
     },
     {
-      id: 'data-ia',
+      id: 'diagnostico-ia',
       icon: BrainCircuit,
-      title: 'Datos e IA',
-      description: 'Transformamos datos crudos en diagnósticos y alertas predictivas mediante modelos de inteligencia artificial.',
+      title: 'Diagnóstico Predictivo con IA',
+      description: 'Nuestro motor de inteligencia artificial analiza patrones de series temporales para detectar fallas antes de que ocurran y determinar su origen exacto.',
     },
     {
-      id: 'automation',
-      icon: Workflow,
-      title: 'Automatización de Procesos',
-      description: 'Digitalizamos flujos de trabajo manuales y burocráticos para eliminar tiempos muertos y errores humanos.',
-    },
-    {
-      id: 'cloud',
-      icon: Cloud,
-      title: 'Infraestructura Cloud y DevOps',
-      description: 'Desplegamos y operamos plataformas seguras y de alta disponibilidad con integración y entrega continua.',
-    },
-    {
-      id: 'support',
-      icon: Headset,
-      title: 'Mantenimiento y Soporte',
-      description: 'Acompañamos a nuestros clientes después de la entrega con soporte técnico y mantenimiento preventivo y correctivo.',
+      id: 'gestion-tecnica',
+      icon: Wrench,
+      title: 'Gestión y Derivación Técnica',
+      description: 'Plataforma de partnering que genera órdenes de reparación directas con hoja de ruta y repuestos, derivando a talleres locales certificados sin visitas previas.',
     },
   ];
 
@@ -48,14 +30,14 @@ export const ServicesSection: React.FC = () => {
       <div className="max-w-[1200px] mx-auto">
         <div className="text-center mb-10 lg:mb-14">
           <h2 className="section-title">
-            Nuestros <span className="text-brand">Servicios</span>
+            Ecosistema <span className="text-brand">ColdTrack</span>
           </h2>
           <p className="mt-4 text-base text-white">
-            Software, IoT e inteligencia artificial para empresas de la región
+            Soluciones integradas de IoT, software e inteligencia artificial para la cadena de frío
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-6">
           {services.map((service) => {
             const Icon = service.icon;
             const active = service.id === activeId;

@@ -7,7 +7,7 @@ interface NavbarProps {
 }
 
 const menuLinks = [
-  { label: 'Servicios', href: '#services' },
+  { label: 'Soluciones', href: '#services' },
   { label: 'Nosotros', href: '#mission' },
   { label: 'ColdTrack', href: '#coldtrack' },
   { label: 'Cómo funciona', href: '#como-funciona' },
@@ -19,7 +19,7 @@ const EstimateLink: React.FC<{ onClick?: () => void }> = ({ onClick }) => (
     onClick={onClick}
     className="relative pb-2 text-base sm:text-xl font-poppins font-normal text-white hover:text-brand transition-colors"
   >
-    <span className="hidden sm:inline">Solicitar </span>Presupuesto
+    <span className="hidden sm:inline">Solicitar </span>Demo
     <span className="absolute bottom-0 right-0 h-[2px] w-full sm:w-[62%] bg-current" />
   </button>
 );

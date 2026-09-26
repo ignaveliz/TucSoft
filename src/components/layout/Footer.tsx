@@ -25,13 +25,13 @@ const LinkedinIcon = () => (
 
 const links = [
   { label: 'Inicio', href: '#' },
-  { label: 'Servicios', href: '#services' },
+  { label: 'Soluciones', href: '#services' },
   { label: 'Nosotros', href: '#mission' },
   { label: 'ColdTrack', href: '#coldtrack' },
   { label: 'Clientes', href: '#clients' },
 ];
 
-const services = ['Desarrollo a Medida', 'IoT y Telemetría', 'Datos e IA', 'Automatización', 'Cloud y DevOps'];
+const solutions = ['Telemetría IoT', 'Diagnóstico con IA', 'Gestión Técnica', 'Plataforma de Partnering'];
 
 export const Footer: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -55,8 +55,8 @@ export const Footer: React.FC = () => {
               <img src={logo} alt="TucSoft" className="h-10 w-auto" />
             </a>
             <p className="mt-6 text-[15px] leading-[22px]">
-              Creemos en crecer juntos, impulsando empresas mediante la tecnología y resolviendo sus
-              necesidades de software con planificación estratégica y desarrollo.
+              Empresa tecnológica de producto enfocada en el monitoreo inteligente y mantenimiento
+              predictivo de equipos de frío comercial e industrial mediante IoT e inteligencia artificial.
             </p>
 
             <form onSubmit={handleSubscribe} className="mt-4 flex h-12 border border-brand max-w-[360px]">
@@ -97,11 +97,11 @@ export const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h4 className="text-xl font-medium text-brand">Servicios</h4>
+            <h4 className="text-xl font-medium text-brand">Soluciones</h4>
             <ul className="mt-8 space-y-6 text-sm font-medium">
-              {services.map((service) => (
-                <li key={service}>
-                  <a href="#services" className="hover:text-brand transition-colors">{service}</a>
+              {solutions.map((solution) => (
+                <li key={solution}>
+                  <a href="#services" className="hover:text-brand transition-colors">{solution}</a>
                 </li>
               ))}
             </ul>

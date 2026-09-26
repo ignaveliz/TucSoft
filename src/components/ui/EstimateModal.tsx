@@ -11,9 +11,9 @@ export const EstimateModal: React.FC<EstimateModalProps> = ({ isOpen, onClose })
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
+    company: '',
     email: '',
-    service: 'Solución ColdTrack IoT',
-    budget: '$5,000 - $15,000',
+    equipmentCount: '',
     message: '',
   });
 
@@ -43,16 +43,16 @@ export const EstimateModal: React.FC<EstimateModalProps> = ({ isOpen, onClose })
             <CheckCircle size={56} className="text-brand mx-auto " />
             <h3 className="text-2xl font-bold text-white">¡Solicitud Recibida!</h3>
             <p className="text-sm text-white/70 max-w-xs mx-auto">
-              Nuestro equipo de ingeniería evaluará tus requerimientos y se pondrá en contacto en menos de 24 horas hábiles.
+              Nuestro equipo comercial se pondrá en contacto en menos de 24 horas hábiles para coordinar una demo personalizada.
             </p>
           </div>
         ) : (
           <div>
             <h3 className="text-2xl font-bold text-white mb-1">
-              Solicitar <span className="text-brand">Presupuesto</span>
+              Solicitar <span className="text-brand">Demo</span>
             </h3>
             <p className="text-sm text-white/70 mb-6">
-              Cuéntanos sobre las necesidades tecnológicas y requerimientos de tu proyecto.
+              Completá tus datos y un asesor de ColdTrack se pondrá en contacto con vos.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -64,6 +64,18 @@ export const EstimateModal: React.FC<EstimateModalProps> = ({ isOpen, onClose })
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   placeholder="Juan Pérez"
+                  className="w-full bg-ink-deep border border-ink-card rounded px-4 py-2.5 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-brand"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm text-white mb-1">Empresa</label>
+                <input
+                  type="text"
+                  required
+                  value={formData.company}
+                  onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                  placeholder="Embotelladora del Norte S.A."
                   className="w-full bg-ink-deep border border-ink-card rounded px-4 py-2.5 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-brand"
                 />
               </div>
@@ -81,35 +93,29 @@ export const EstimateModal: React.FC<EstimateModalProps> = ({ isOpen, onClose })
               </div>
 
               <div>
-                <label className="block text-sm text-white mb-1">Servicio de Interés</label>
-                <select
-                  value={formData.service}
-                  onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                  className="w-full bg-ink-deep border border-ink-card rounded px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand"
-                >
-                  <option value="Solución ColdTrack IoT">Solución ColdTrack IoT</option>
-                  <option value="Desarrollo a Medida">Desarrollo a Medida (web y móvil)</option>
-                  <option value="IoT y Telemetría">IoT y Telemetría</option>
-                  <option value="Datos e IA">Datos e IA</option>
-                  <option value="Automatización de Procesos">Automatización de Procesos</option>
-                  <option value="Infraestructura Cloud y DevOps">Infraestructura Cloud y DevOps</option>
-                </select>
+                <label className="block text-sm text-white mb-1">Cantidad Aprox. de Equipos de Frío</label>
+                <input
+                  type="text"
+                  value={formData.equipmentCount}
+                  onChange={(e) => setFormData({ ...formData, equipmentCount: e.target.value })}
+                  placeholder="Ej: 50 heladeras, 20 freezers"
+                  className="w-full bg-ink-deep border border-ink-card rounded px-4 py-2.5 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-brand"
+                />
               </div>
 
               <div>
-                <label className="block text-sm text-white mb-1">Detalles del Proyecto</label>
+                <label className="block text-sm text-white mb-1">Mensaje (opcional)</label>
                 <textarea
                   rows={3}
-                  required
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  placeholder="Describe los objetivos y alcance de tu proyecto..."
+                  placeholder="Contanos brevemente tu situación actual con los equipos de frío..."
                   className="w-full bg-ink-deep border border-ink-card rounded px-4 py-2.5 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-brand"
                 />
               </div>
 
               <Button type="submit" variant="primary" size="lg" className="w-full mt-2">
-                <span>Enviar Solicitud</span>
+                <span>Solicitar Demo</span>
                 <Send size={16} />
               </Button>
             </form>
