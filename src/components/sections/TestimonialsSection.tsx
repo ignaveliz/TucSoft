@@ -46,8 +46,8 @@ const provinceLabels: Record<string, { x: number; y: number }> = {
 
 export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ onConnect }) => {
   return (
-    <section id="clients" className="bg-ink px-4 sm:px-10 lg:px-20 pt-20 pb-24">
-      <div className="max-w-[1200px] mx-auto">
+    <section id="clients" className="screen-section hero-glow">
+      <div className="max-w-[1200px] w-full mx-auto">
         <div className="bg-ink-deep rounded-lg px-6 sm:px-8 py-10 flex flex-col md:flex-row md:items-center justify-between gap-8 mb-20 lg:mb-24">
           <div className="max-w-[800px]">
             <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
