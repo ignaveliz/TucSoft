@@ -3,8 +3,8 @@ import { Target, Eye } from 'lucide-react';
 
 export const MissionVisionSection: React.FC = () => {
   return (
-    <section id="mission" className="bg-ink-deep py-20 px-4 sm:px-10 lg:px-20">
-      <div className="max-w-[1200px] mx-auto">
+    <section id="mission" className="screen-section bg-ink-deep">
+      <div className="max-w-[1200px] w-full mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="section-title mb-4">
             Misión & <span className="text-brand">Visión</span>

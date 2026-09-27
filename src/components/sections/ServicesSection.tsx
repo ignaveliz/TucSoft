@@ -44,8 +44,8 @@ export const ServicesSection: React.FC = () => {
   ];
 
   return (
-    <section id="services" className="bg-ink pt-16 pb-20 px-4 sm:px-10 lg:px-20">
-      <div className="max-w-[1200px] mx-auto">
+    <section id="services" className="screen-section bg-ink">
+      <div className="max-w-[1200px] w-full mx-auto">
         <div className="text-center mb-10 lg:mb-14">
           <h2 className="section-title">
             Nuestros <span className="text-brand">Servicios</span>
