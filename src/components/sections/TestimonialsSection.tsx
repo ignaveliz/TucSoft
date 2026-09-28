@@ -46,21 +46,21 @@ const provinceLabels: Record<string, { x: number; y: number }> = {
 
 export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ onConnect }) => {
   return (
-    <section id="clients" className="bg-ink px-4 sm:px-10 lg:px-20 pt-20 pb-24">
-      <div className="max-w-[1200px] mx-auto">
+    <section id="clients" className="screen-section hero-glow">
+      <div className="max-w-[1200px] w-full mx-auto">
         <div className="bg-ink-deep rounded-lg px-6 sm:px-8 py-10 flex flex-col md:flex-row md:items-center justify-between gap-8 mb-20 lg:mb-24">
           <div className="max-w-[800px]">
             <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
-              ¿Listo para <span className="text-brand">Innovar?</span>
+              ¿Listo para <span className="text-brand">ColdTrack?</span>
             </h2>
             <p className="mt-4 text-base leading-6 text-white">
-              Contáctanos para agendar una reunión técnica sobre tu proyecto y descubrir cómo podemos
-              satisfacer tus necesidades tecnológicas.
+              Agendá una demo personalizada y descubrí cómo ColdTrack puede transformar
+              la gestión de tus equipos de frío.
             </p>
           </div>
 
           <Button variant="outline" size="lg" onClick={onConnect} className="group whitespace-nowrap self-start md:self-center">
-            <span>Hablemos</span>
+            <span>Solicitar Demo</span>
             <ArrowRight size={22} strokeWidth={1.5} className="group-hover:translate-x-1 transition-transform" />
           </Button>
         </div>

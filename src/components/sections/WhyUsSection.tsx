@@ -10,8 +10,8 @@ const goals = [
 
 export const WhyUsSection: React.FC = () => {
   return (
-    <section id="nosotros" className="bg-ink-deep px-4 sm:px-10 lg:px-20 py-12 lg:py-14">
-      <div className="max-w-[1200px] mx-auto flex flex-col lg:flex-row lg:items-center justify-between gap-10">
+    <section id="nosotros" className="screen-section bg-ink-deep">
+      <div className="max-w-[1200px] w-full mx-auto flex flex-col lg:flex-row lg:items-center justify-between gap-10">
         <div className="lg:max-w-[440px]">
           <h2 className="section-title">
             ¿Por qué <span className="text-brand">Nosotros?</span>
